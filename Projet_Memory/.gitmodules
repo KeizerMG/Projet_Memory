@@ -1,0 +1,6 @@
+[submodule "vendor/fakerphp/faker"]
+	path = vendor/fakerphp/faker
+	url = https://github.com/FakerPHP/Faker.git
+[submodule "vendor/psr/container"]
+	path = vendor/psr/container
+	url = https://github.com/php-fig/container.git
