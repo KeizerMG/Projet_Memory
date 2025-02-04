@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 
 define('BASE_PATH', __DIR__);
 
-// Error handling
+
 set_exception_handler(function($e) {
     error_log("Exception: " . $e->getMessage() . " in " . $e->getFile() . " on line " . $e->getLine());
     error_log($e->getTraceAsString());
