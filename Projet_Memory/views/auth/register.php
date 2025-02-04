@@ -40,7 +40,7 @@
         </form>
         <p class="mt-6 text-center text-gray-400">
             Déjà un compte ? 
-            <a href="/Projet_Memory/views/auth/login.php" class="text-blue-400 hover:text-blue-300">Se connecter</a>
+            <a href="/Projet_Memory/index.php?page=login" class="text-blue-400 hover:text-blue-300">Se connecter</a>
         </p>
     </div>
 
@@ -51,7 +51,7 @@
             const formData = new FormData(e.target);
             
             try {
-                const response = await fetch('/Projet_Memory/controllers/AuthController.php?action=register', {
+                const response = await fetch('/Projet_Memory/Projet_Memory/controllers/AuthController.php?action=register', {
                     method: 'POST',
                     body: formData
                 });
@@ -73,7 +73,7 @@
 
                     setTimeout(() => {
                         window.location.href = '/Projet_Memory/index.php?page=login';
-                    }, 1000);
+                    }, 2000);
                 } else {
                     Toastify({
                         text: data.message || "Une erreur est survenue",

@@ -16,7 +16,7 @@
 </head>
 <body class="bg-gray-900 min-h-screen flex items-center justify-center">
     <div class="absolute top-4 left-4">
-        <a href="/Projet_Memory/views/home.php" 
+        <a href="/Projet_Memory/index.php" 
            class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
             Meilleurs scores
         </a>
@@ -42,7 +42,7 @@
         </form>
         <p class="mt-6 text-center text-gray-400">
             Pas encore de compte ? 
-            <a href="/Projet_Memory/views/auth/register.php" class="text-blue-400 hover:text-blue-300">S'inscrire</a>
+            <a href="/Projet_Memory/index.php?page=register" class="text-blue-400 hover:text-blue-300">S'inscrire</a>
         </p>
     </div>
 
@@ -53,7 +53,7 @@
             const formData = new FormData(e.target);
             
             try {
-                const response = await fetch('/Projet_Memory/controllers/AuthController.php?action=login', {
+                const response = await fetch('/Projet_Memory/Projet_Memory/controllers/AuthController.php?action=login', {
                     method: 'POST',
                     body: formData
                 });

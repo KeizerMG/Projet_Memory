@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 if (!isset($_SESSION['user_id'])) {
     header('Location: /Projet_Memory/index.php?page=login');
     exit;
@@ -129,6 +131,18 @@ if (!isset($_SESSION['user_id'])) {
                 transform: translateY(0);
                 opacity: 1;
             }
+        }
+
+        .card {
+            width: 100px;
+            height: 150px;
+            background-image: url('/Projet_Memory/Projet_Memory/assets/card-back.png');
+            background-size: cover;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .card.flipped {
+            background-image: none;
         }
     </style>
 </head>
@@ -545,7 +559,7 @@ if (!isset($_SESSION['user_id'])) {
                 const cardElement = `
                     <div class='memory-card aspect-square rounded-xl relative' data-framework='${card}'>
                         <div class='card-front absolute inset-0 bg-white rounded-xl flex items-center justify-center p-2'>
-                            <img src='/Projet_Memory/assets/images/${card}.png' 
+                            <img src='/Projet_Memory/Projet_Memory/assets/images/${card}.png' 
                                  alt='${card}' 
                                  class='w-full h-full object-contain'>
                         </div>
@@ -574,6 +588,12 @@ if (!isset($_SESSION['user_id'])) {
         window.addEventListener('load', () => {
             setDifficulty();
             initializeGame();
+        });
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
         });
     </script>
 </body>

@@ -8,16 +8,13 @@
 </head>
 <body class="bg-gray-900 min-h-screen">
     <div class="container mx-auto px-4 py-12">
-     
         <div class="text-center mb-16">
             <h1 class="text-5xl font-bold text-white mb-8">Memory Game</h1>
-            <a href="/Projet_Memory/views/auth/login.php" 
+            <a href="/Projet_Memory/index.php?page=login" 
                class="inline-block px-8 py-4 text-xl bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg hover:from-blue-600 hover:to-indigo-700 transition-all font-semibold">
                 Jouer au jeu
             </a>
         </div>
-
-       
         <div class="max-w-4xl mx-auto bg-gray-800/50 rounded-xl p-8 backdrop-blur-xl border border-gray-700">
             <h2 class="text-3xl font-bold text-white mb-8 text-center">Meilleurs scores</h2>
             <?php

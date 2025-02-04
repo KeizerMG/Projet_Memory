@@ -4,7 +4,7 @@ $dbname = 'memory_game';
 $username = 'root';
 $password = '';
 
-// Créer la base de données
+
 try {
     $pdo = new PDO("mysql:host=$host", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -14,7 +14,7 @@ try {
     die("Erreur lors de la création de la base de données: " . $e->getMessage());
 }
 
-// Importer le fichier SQL
+
 try {
     $pdo->exec("USE $dbname");
     $sql = file_get_contents('database/memory_game.sql');

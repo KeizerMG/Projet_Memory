@@ -23,18 +23,17 @@ $users = [
     ['username' => 'user', 'email' => 'user@example.com', 'password' => hashPassword('user')]
 ];
 
+for ($i = 0; $i < 15; $i++) {
+    $users[] = [
+        'username' => $faker->userName,
+        'email' => $faker->email,
+        'password' => hashPassword('password')
+    ];
+}
+
 foreach ($users as $user) {
     $stmt = $db->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
     $stmt->execute([$user['username'], $user['email'], $user['password']]);
-}
-
-for ($i = 0; $i < 10; $i++) {
-    $username = $faker->userName;
-    $email = $faker->email;
-    $password = hashPassword('password'); // Mot de passe par défaut
-
-    $stmt = $db->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
-    $stmt->execute([$username, $email, $password]);
 }
 
 // Récupérer les IDs des utilisateurs
